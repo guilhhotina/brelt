@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.bin
+
+# local/dev-only files
+.python-version
+baseline.donttouch
+train.colab
+
+# internal-only folders
+/docs/
+/serve/
+/systemd/
+/scripts/
+
+# local checkpoints and exports
+/final_model.pt
+/final_model.int8.ptz
+/artifacts/
+/logs/

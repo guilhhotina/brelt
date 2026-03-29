@@ -1,0 +1,16 @@
+[project]
+name = "brelt"
+version = "0.1.0"
+description = "brelt byte-latent recurrent language modeling research sandbox"
+requires-python = ">=3.13"
+dependencies = [
+  "numpy==2.4.3",
+  "sentencepiece==0.2.1",
+  "torch==2.11.0",
+  "tqdm==4.67.3",
+  "huggingface-hub==1.8.0",
+  "zstandard==0.25.0",
+]
+
+[tool.uv]
+package = false
