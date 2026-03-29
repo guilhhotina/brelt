@@ -8,11 +8,11 @@ brelt is a compression-first language modeling architecture.
 
 instead, brelt tries to:
 
--> read raw bytes
--> compress local spans into patch latents
--> run recurrent global mixing over a much shorter internal sequence
--> decode back to byte predictions
--> stay robust under aggressive quantization and tiny checkpoint budgets
+1. read raw bytes
+2. compress local spans into patch latents
+3. run recurrent global mixing over a much shorter internal sequence
+4. decode back to byte predictions
+5. stay robust under aggressive quantization and tiny checkpoint budgets
 
 this repo currently contains two main things:
 
@@ -45,11 +45,11 @@ so the model stays both **small** and **competitive**
 
 ## what brelt is trying to do
 
-almmost all lms still operate on a flat visible sequence:
+almost all lms still operate on a flat visible sequence:
 
--> tokens in
--> full sequence processing
--> tokens out
+1. tokens in
+2. full sequence processing
+3. tokens out
 
 brelt treats the byte stream as the minimal causal interface, but not as the final internal unit of thought.
 the model tries to learn a shorter internal sequence made of latent patches and super-latents, then do most of the expensive work there,
@@ -134,9 +134,9 @@ in other words, the project is about whether a model can compress while it think
 
 the current winning run proved a few important things:
 
--> recurrent global latent mixing can work under a strict t4 budget
--> the architecture can beat the adapted baseline fairly
--> the quantized export can make the final artifact up to 10x smaller without major losses
+1. recurrent global latent mixing can work under a strict t4 budget
+2. the architecture can beat the adapted baseline fairly
+3. the quantized export can make the final artifact up to 10x smaller without major losses
 
 there are still a lot of rough edges, of course, but brelt can now stand on its own.
 
@@ -160,13 +160,13 @@ this is a winning and very promising brelt, not a finished brelt. there is still
 
 ## roadmap
 
-make segmentation truly learned without reintroducing patch explosion
-make span commit stronger and more causal 
-force the latent to carry more meaningful burden 
-make the global recurrent core stronger without losing throughput 
-keep pushing quantization as a co-designed part of the architecture 
+1. make segmentation truly learned without reintroducing patch explosion
+2. make span commit stronger and more causal
+3. force the latent to carry more meaningful burden
+4. make the global recurrent core stronger without losing throughput
+5. keep pushing quantization as a co-designed part of the architecture
 
-the next goal is to won by an absurd margin!
+the next goal is to win by an absurd margin!
 
 ---
 
